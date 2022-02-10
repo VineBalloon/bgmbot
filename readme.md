@@ -3,8 +3,8 @@
 A straightforward script to expose and loop opus files through a discord bot using the next discord library (the thing after discordpy). Uses slash commands and a nice Select UI.
 
 ## Installation
-1. Install `libffi`, `libnacl`, `python3-dev` for your preferred system
-    - For those using `apt`, use `apt install libffi-dev libnacl-dev python3-dev`
+1. Install `libffi`, `libnacl`, `python3-dev`, and `ffmpeg` for your preferred system
+    - For those using `apt`, use `apt install libffi-dev libnacl-dev python3-dev ffmpeg`
     - N.B. Since Ubuntu doesn't have 3.8+ in the default repos, you'll need to add one and install the relevant `python3.x-dev` where x is the version number you installed
     - e.g. If I installed `python-3.10`, I would use the command `apt install libffi-dev libnacl-dev python3.10-dev`
 
