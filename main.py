@@ -23,10 +23,10 @@ if __name__ == "__main__":
 
     # get bgms
     bgms = os.listdir("bgms")
-    print(bgms)
+    bgms.sort()
 
     # construct options
-    opts: List[SelectOption] = []
+    opts = []
     for bgm in bgms:
         # yeet extension
         name = bgm.split(".")[0]
@@ -78,15 +78,9 @@ if __name__ == "__main__":
                 print(e)
                 await interaction.response.send_message(f"Tell my developer that I called them a big idiot")
 
-
-    # @bot.slash_command(name="list", description="List all available BGMs")
-    # async def list(interaction: Interaction):
-    #     await interaction.response.send_message(" ".join(bgms))
-
-
     @bot.slash_command(name="play", description="Brings up a UI for you to select the currently playing BGM")
     async def play(interaction: Interaction):
-        await interaction.response.send_message(content=":thinking: + :arrow_down: = :musical_note:", view=BGMSelector())
+        await interaction.response.send_message(content=":thinking: + :arrow_down: = :musical_note:", view=BGMSelector(timeout=600), ephemeral=True)
 
     @bot.slash_command(name="stop", description="Stops the music")
     async def stop(interaction: Interaction):
